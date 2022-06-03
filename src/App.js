@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import Copper from "./Copper";
+import { useState } from 'react';
 
 function App() {
-  return (
+  const [getContext, handleGetContext] = useState(false);
+    return (
     <div className="App">
+    {getContext ? (
+      <Copper />
+    ) : (
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
           Edit <code>src/App.js</code> and save to reload.
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <button style={{border: '1px solid #fff'}} onClick={() => handleGetContext(true)}></button>
       </header>
+    )}
     </div>
   );
 }
